@@ -13,7 +13,17 @@
       }
 
       iron-icon {
-        fill: var(--);
+        fill: var(--icon-color, #FFA726);
+        stroke: var(--icon-stroke, #4FC3F7);
+      },
+
+      :host([pressed]) iron-icon {
+        fill: var(--icon-color-pressed, #4FC3F7);
+      },
+
+      :root {
+        --iron-icon-width: 40px;
+        --iron-icon-height: 40px;
       }
 
     </style>
@@ -43,7 +53,7 @@
     press: function() {
       this.pressed = !this.pressed;
     },
-    
+
   });
   </script>
 
