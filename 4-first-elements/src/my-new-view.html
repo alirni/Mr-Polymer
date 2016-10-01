@@ -3,6 +3,7 @@
 <link rel="import" href="../bower_components/paper-dialog-behavior/paper-dialog-behavior.html" />
 <link rel="import" href="../bower_components/paper-button/paper-button.html" />
 <link rel="import" href="../bower_components/paper-dialog-scrollable/paper-dialog-scrollable.html" />
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html" />
 
 
 <dom-module id="my-new-view">
@@ -20,17 +21,9 @@
 
 		<paper-slider min="-100" max="100" value="50"></paper-slider>
 		
-		<paper-dialog-impl>
-			<h2>Header</h2>
-			<div>Dialog Body</div>
-			<div>
-				<paper-button dialog-dismiss>Cancel</paper-button>
-				<paper-button dialog-confirm>Accept</paper-button>
-			</div>
-		</paper-dialog-impl>
 
-		<paper-button rised onclick="scrolling.toggle()">open</paper-button>
-		<simple-dialog id="scrolling">
+		<paper-button raised on-tap="opendialog">open</paper-button>
+		<paper-dialog id="dialog">
 			<h2>Scroll</h2>
 			<paper-dialog-scrollable>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non dignissimos suscipit, quisquam, reiciendis voluptate maiores nam nisi. Architecto fuga praesentium repellat, laudantium, quis corporis dolor illo veniam cum eius, amet.</p>
@@ -42,15 +35,20 @@
 			</paper-dialog-scrollable>
 			<div class="buttons">
 				<paper-button dialog-dismiss>Cancel</paper-button>
-				<paper-button dialog-confirm>Ok</paper-button>
+				<!-- <paper-button dialog-confirm>Ok</paper-button> -->
 			</div>
-		</simple-dialog>
+		</paper-dialog>
+
 	</template>
 	
 	<!-- the element script -->
 	<script>
 		Polymer({
-			is: 'my-new-view'
+			is: 'my-new-view',
+
+			opendialog: function() {
+				this.$.dialog.open()
+			}
 		});
 	</script>
 
