@@ -25,6 +25,7 @@
   <script>
   Polymer({
     is: 'icon-toggle',
+    
     properties: {
       toggleIcon: String,
       pressed: {
@@ -33,7 +34,16 @@
         notify: true,
         reflectToAttribute: true
       }
-    }
+    },
+
+    listeners: {
+      'tap': 'press'
+    },
+
+    press: function() {
+      this.pressed = !this.pressed;
+    },
+    
   });
   </script>
 
