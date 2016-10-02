@@ -62,6 +62,7 @@
 				margin-top: 1em;
 			}
 
+
 		</style>
 		
 		<paper-card>
@@ -73,7 +74,7 @@
 			<paper-button class="darkblue" raised on-tap="spray">#25374A</paper-button>
 		</paper-card>
 
-		<paper-card class="color" id="paper-color" ></paper-card>
+		<paper-card class="color" id="paperColor" ></paper-card>
 
 	</template>
     
@@ -81,11 +82,21 @@
 		Polymer({
 			is: 'my-view5',
 
-			// spray: function(){
-			// 	this.$.paper-color.
+			// properties: {
+			// 	codecolor: {
+			// 		type: String,
+			// 		reflectToAttribute: true,
+			// 		notify: true
+			// 	},
 			// },
 
+			spray: function (event){
+				var color = event.detail.sourceEvent.target.innerHTML;
+				this.$.paperColor.style.backgrundColor = ;
+			},
+
 		});
+
   </script>
 
 </dom-module>
