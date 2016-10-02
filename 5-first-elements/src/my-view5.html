@@ -1,6 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html" />
 <link rel="import" href="../bower_components/paper-card/paper-card.html" />
 <link rel="import" href="../bower_components/paper-button/paper-button.html" />
+<link rel="import" href="../bower_components/paper-styles/color.html">
 
 <dom-module id="my-view5">
 
@@ -25,56 +26,65 @@
 
 
 			.green {
-				--paper-button-ink-color: #C8E6C9;
+				--paper-button-ink-color: var(--paper-green-100);
 				background-color: #2ECC71;
 			}
 
 			.blue {
-				--paper-button-ink-color: #BBDEFB;
-				background-color: #2196F3;
+				--paper-button-ink-color: var(--paper-blue-100);
+				background-color: var(--paper-blue-500);
 			}
 			
 			.red {
-				--paper-button-ink-color: #ffcdd2;
-				background-color: #F44336;
+				--paper-button-ink-color: var(--paper-red-100);
+				background-color: var(--paper-red-500);
 			}
 
 			.yellow {
-				--paper-button-ink-color: #FFF9C4;
-				background-color: #FFEB3B;
+				--paper-button-ink-color: var(--paper-yellow-100);
+				background-color: var(--paper-yellow-500);
 				color: #212121;
 			}
 
 			.orange {
-				--paper-button-ink-color: #FFE0B2;
-				background-color: #FF5722;
+				--paper-button-ink-color: var(--paper-orange-100);
+				background-color: var(--paper-deep-orange-500);
 			}
 
 			.darkblue {
-				--paper-button-ink-color: #CFD8DC;
+				--paper-button-ink-color: var(--paper-blue-grey-100);
 				background-color: #25374A;
 			}
 			
-			.
+			.color {
+				width: 100%;
+				height: 14em;
+				margin-top: 1em;
+			}
 
 		</style>
 		
 		<paper-card>
-			<paper-button class="green" raised>#2ECC71</paper-button>
-			<paper-button class="blue" raised>#2196F3</paper-button>
-			<paper-button class="red" raised>#F44336</paper-button>
-			<paper-button class="yellow" raised>#FFEB3B</paper-button>
-			<paper-button class="orange" raised>#FF5722</paper-button>
-			<paper-button class="darkblue" raised>#25374A</paper-button>
+			<paper-button class="green" raised on-tap="spray">#2ECC71</paper-button>
+			<paper-button class="blue" raised on-tap="spray">#2196F3</paper-button>
+			<paper-button class="red" raised on-tap="spray">#F44336</paper-button>
+			<paper-button class="yellow" raised on-tap="spray">#FFEB3B</paper-button>
+			<paper-button class="orange" raised on-tap="spray">#FF5722</paper-button>
+			<paper-button class="darkblue" raised on-tap="spray">#25374A</paper-button>
 		</paper-card>
 
-		<paper-card></paper-card>
+		<paper-card class="color" id="paper-color" ></paper-card>
 
 	</template>
     
   <script>
 		Polymer({
 			is: 'my-view5',
+
+			// spray: function(){
+			// 	this.$.paper-color.
+			// },
+
 		});
   </script>
 
