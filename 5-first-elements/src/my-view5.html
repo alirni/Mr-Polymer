@@ -11,6 +11,7 @@
 				font-size: 20px;
 				display: block;
 				margin: .6em;
+				color: #fafafa;
 			}
 			
 			paper-card {
@@ -19,18 +20,55 @@
 
 			paper-button {
 				padding: 1em;
+				margin: .5em;
 			}
+
+
+			.green {
+				--paper-button-ink-color: #C8E6C9;
+				background-color: #2ECC71;
+			}
+
+			.blue {
+				--paper-button-ink-color: #BBDEFB;
+				background-color: #2196F3;
+			}
+			
+			.red {
+				--paper-button-ink-color: #ffcdd2;
+				background-color: #F44336;
+			}
+
+			.yellow {
+				--paper-button-ink-color: #FFF9C4;
+				background-color: #FFEB3B;
+				color: #212121;
+			}
+
+			.orange {
+				--paper-button-ink-color: #FFE0B2;
+				background-color: #FF5722;
+			}
+
+			.darkblue {
+				--paper-button-ink-color: #CFD8DC;
+				background-color: #25374A;
+			}
+			
+			.
 
 		</style>
 		
 		<paper-card>
-			<paper-button>#2ECC71</paper-button>
-			<paper-button>#2196F3</paper-button>
-			<paper-button>#F44336</paper-button>
-			<paper-button>#FFEB3B</paper-button>
-			<paper-button>#FF5722</paper-button>
-			<paper-button>#25374A</paper-button>
+			<paper-button class="green" raised>#2ECC71</paper-button>
+			<paper-button class="blue" raised>#2196F3</paper-button>
+			<paper-button class="red" raised>#F44336</paper-button>
+			<paper-button class="yellow" raised>#FFEB3B</paper-button>
+			<paper-button class="orange" raised>#FF5722</paper-button>
+			<paper-button class="darkblue" raised>#25374A</paper-button>
 		</paper-card>
+
+		<paper-card></paper-card>
 
 	</template>
     
