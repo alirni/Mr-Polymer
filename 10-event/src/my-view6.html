@@ -1,0 +1,44 @@
+<link rel="import" href="../bower_components/polymer/polymer.html" />
+
+<dom-module id="my-view6">
+
+	<template>
+
+    <style>
+      /* Apply custom theme to toolbars */
+      :host {
+        --my-toolbar-theme: {
+          background-color: #32ab32;
+          border-radius: 4px;
+          border: 1px solid gray;
+					margin: 10px;
+        };
+        --my-toolbar-title-theme: {
+          color: black;
+        };
+      }
+
+      /* Make only toolbars with the .warning class red and bold */
+      .warning {
+        --my-toolbar-title-theme: {
+          color: red;
+          font-weight: bold;
+        };
+      }
+    </style>
+
+    <my-toolbar title="This one is green."></my-toolbar>
+    <my-toolbar title="This one is green too."></my-toolbar>
+
+    <my-toolbar class="warning" title="This one is red."></my-toolbar>
+
+  </template>
+    
+  <script>
+		Polymer({
+			is: 'my-view6'
+		});
+
+  </script>
+
+</dom-module>
