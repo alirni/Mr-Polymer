@@ -7,8 +7,15 @@
 
     <style>
       :host {
-        padding: 4px;
+        padding: 10px;
+        /* apply a mixin */
+        @apply(--my-toolbar-theme);
       }
+
+      .title {
+        @apply(--my-toolbar-title-theme);
+      }
+
       .title {
         color: var(--my-toolbar-title-color);
       }
