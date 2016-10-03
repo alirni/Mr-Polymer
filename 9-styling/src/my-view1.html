@@ -8,8 +8,9 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
-<link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="shared-styles.html">
+<link rel="import" href="../bower_components/polymer/polymer.html" />
+<link rel="import" href="my-toolbar.html" />
+<link rel="import" href="shared-styles.html" />
 
 <dom-module id="my-view1">
   <template>
@@ -18,6 +19,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
 
         padding: 10px;
+        --my-toolbar-title-color: green;
+      }
+
+      .warning {
+        --my-toolbar-title-color: red;
       }
 
       #child-element {
@@ -39,6 +45,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       
       <div id="child-element">In local DOM!</div>
       <div class="content-wrapper"><content></content></div>
+
+      <p>
+        <my-toolbar title="This one is green."></my-toolbar>
+        <my-toolbar title="This one is green too."></my-toolbar>
+        <my-toolbar class="warning" title="This one is red."></my-toolbar>
+      </p>
 
     </div>
   </template>
