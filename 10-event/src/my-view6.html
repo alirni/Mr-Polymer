@@ -32,11 +32,30 @@
 
     <my-toolbar class="warning" title="This one is red."></my-toolbar>
 
+    <div>I will respond</div>
+    <div>to a tap on</div>
+    <div>any of my childern!</div>
+    <div id="special">I am special!</div>    
+
   </template>
     
   <script>
 		Polymer({
-			is: 'my-view6'
+			is: 'my-view6',
+
+      listeners: {
+        'tap': 'regularTap',
+        'special.tap': 'specialTap'
+      },
+
+      regularTap: function() {
+        alert("Tank you for tapping");
+      },
+
+      specialTap: function() {
+        alert("I was special tapping");
+      }
+
 		});
 
   </script>
