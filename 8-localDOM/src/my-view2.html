@@ -12,7 +12,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-view2">
-  <template>
+  <template strip-whitespace>
     <style include="shared-styles">
       :host {
         display: block;
@@ -29,7 +29,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <header>Local dom header followed by distributed dom.</header>
         <footer>Footer after distributed dom.</footer>
       </content>
+      <div id="container">
+        <div id="first">ALI</div>
+        <content>javad</content>
+      </div>
+
+      <div>A</div>
+      <div>B</div>
+      
     </div>
+
   </template>
 
   <script>
@@ -39,8 +48,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       ready: function() {
         var distributed = this.getContentChildren('#myContent');
         console.log(distributed.length);
-      }
+        var insert = document.createElement('div');
+        Polymer.dom(this.$.container).insertBefore(insert, this.$.first);
+        console.log(Polymer.dom(this.root).childNodes.length);
+      },
 
     });
+
   </script>
 </dom-module>
