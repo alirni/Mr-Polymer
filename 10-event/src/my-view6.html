@@ -1,4 +1,5 @@
 <link rel="import" href="../bower_components/polymer/polymer.html" />
+<link rel="import" href="my-toolbar.html" />
 
 <dom-module id="my-view6">
 
@@ -36,7 +37,7 @@
     </style>
 
     <my-toolbar title="This one is green."></my-toolbar>
-    <my-toolbar title="This one is green too."></my-toolbar>
+    <my-toolbar title="This one is green too." on-hello="myHello"></my-toolbar> <!-- my-event > on-hello  -->
 
     <my-toolbar class="warning" title="This one is red."></my-toolbar>
 
@@ -66,15 +67,19 @@
       },
 
       regularTap: function (e) {
-        alert("Tank you for tapping");
+        //alert("Tank you for tapping");
       },
 
       specialTap: function (e) {
-        alert("I was special tapping");
+        //alert("I was special tapping");
       },
 
       myTap: function () {
-        alert('whoo!!');
+        //alert('whoo!!');
+      },
+
+      myHello: function () {
+        alert('Hello!!');
       },
 
       handleTrack: function (e) {
