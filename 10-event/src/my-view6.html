@@ -32,10 +32,17 @@
 
     <my-toolbar class="warning" title="This one is red."></my-toolbar>
 
-    <div>I will respond</div>
-    <div>to a tap on</div>
-    <div>any of my childern!</div>
-    <div id="special">I am special!</div>    
+    <p>
+      <div>I will respond</div>
+      <div>to a tap on</div>
+      <div>any of my childern!</div>
+      <div id="special">I am special!</div>
+    </p>
+
+    <p>
+      <button on-tap="myTap">tap me</button>
+    </p>
+
 
   </template>
     
@@ -48,12 +55,16 @@
         'special.tap': 'specialTap'
       },
 
-      regularTap: function() {
+      regularTap: function () {
         alert("Tank you for tapping");
       },
 
-      specialTap: function() {
+      specialTap: function () {
         alert("I was special tapping");
+      },
+
+      myTap: function () {
+        alert('whoo!!');
       }
 
 		});
