@@ -1,0 +1,59 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-view2">
+  <template strip-whitespace>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+    </style>
+
+    <div class="card">
+      <div class="circle">2</div>
+      <h1>View Two</h1>
+      <content id="myContent">
+        Hello World from <span id="name"></span>!
+        <header>Local dom header followed by distributed dom.</header>
+        <footer>Footer after distributed dom.</footer>
+      </content>
+      <div id="container">
+        <div id="first">ALI</div>
+        <content>javad</content>
+      </div>
+
+      <div>A</div>
+      <div>B</div>
+      
+    </div>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-view2',
+      
+      ready: function() {
+        var distributed = this.getContentChildren('#myContent');
+        console.log(distributed.length);
+        var insert = document.createElement('div');
+        Polymer.dom(this.$.container).insertBefore(insert, this.$.first);
+        console.log(Polymer.dom(this.root).childNodes.length);
+      },
+
+    });
+
+  </script>
+</dom-module>

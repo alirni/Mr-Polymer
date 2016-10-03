@@ -1,0 +1,90 @@
+<link rel="import" href="../bower_components/polymer/polymer.html" />
+<link rel="import" href="../bower_components/paper-slider/paper-slider.html" />
+<link rel="import" href="../bower_components/paper-dialog-behavior/paper-dialog-behavior.html" />
+<link rel="import" href="../bower_components/paper-button/paper-button.html" />
+<link rel="import" href="../bower_components/paper-dialog-scrollable/paper-dialog-scrollable.html" />
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html" />
+
+
+<dom-module id="my-new-view">
+	<!-- the element style -->
+	<template>
+	
+		<style>
+			:host {
+				display: block;
+				padding: 16px;
+			}
+
+			paper-slider {
+				--paper-slider-height: 5px;
+				--paper-slider-secondary-color: #212121;
+			}
+
+			.caption {
+        padding-left: 12px;
+        color: #a0a0a0;
+      }
+
+		</style>
+
+		<h1>New View</h1>
+
+		<paper-slider value="20" secondary-progress="70" pin id="valuee"></paper-slider>
+		
+		<paper-slider disabled value="1"></paper-slider>
+
+		<!-- <div>Grade: <span id="gradeLabel" class="caption"></span></div>
+    <paper-slider id="grade" pin value="20" secondary-progress="70"></paper-slider> -->
+ 
+
+		<paper-button raised on-tap="opendialog">open</paper-button>
+		<paper-dialog id="dialog">
+			<h2>Scroll</h2>
+			<paper-dialog-scrollable>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non dignissimos suscipit, quisquam, reiciendis voluptate maiores nam nisi. Architecto fuga praesentium repellat, laudantium, quis corporis dolor illo veniam cum eius, amet.</p>
+				<p>Inventore cum cumque repellat eum sapiente illo, odio similique dolorem enim temporibus accusantium et officia, quae. Accusamus a magnam pariatur, doloribus, dolor vero exercitationem, animi consectetur nesciunt atque nisi beatae.</p>
+				<p>Enim quo itaque accusantium, expedita consequatur fugiat voluptatibus porro nisi voluptatem eligendi earum, inventore aliquam qui repellat esse facilis ab atque quibusdam facere necessitatibus natus? Velit saepe, quasi amet ullam.</p>
+				<p>Nesciunt sapiente debitis suscipit minus odit nisi consectetur sint. Quam consequatur porro nam, iusto delectus id reiciendis neque consequuntur. Mollitia tenetur vero libero, corrupti tempore eligendi inventore atque temporibus est!</p>
+				<p>Deserunt ipsam quos quas odit aut unde dolorem dignissimos itaque, sapiente eaque error iste optio alias vel minus omnis dicta accusamus nobis fugit laboriosam soluta! Ipsum dolores nesciunt, voluptatibus suscipit!</p>
+				<p>Laborum eaque, reprehenderit suscipit illo assumenda sequi odit obcaecati possimus ab dolorem, quasi voluptate asperiores nisi, dolores aspernatur, dignissimos reiciendis eos? Accusamus nostrum sunt voluptatibus vel, voluptates quisquam ad ab.</p>
+			</paper-dialog-scrollable>
+			<div class="buttons">
+				<paper-button dialog-dismiss>Cancel</paper-button>
+				<!-- <paper-button dialog-confirm>Ok</paper-button> -->
+			</div>
+		</paper-dialog>
+
+	</template>
+	
+	<!-- the element script -->
+	<script>
+		Polymer({
+			is: 'my-new-view',
+
+			opendialog: function() {
+				this.$.dialog.open()
+			}
+
+			// valuee: function() {
+			// 	this.valuee = this.immediateValue;
+			// }
+
+		});
+
+		// document.addEventListener('WebComponentsReady', function() {
+  //     var ratings = document.querySelector('#ratings');
+  //     ratings.addEventListener('value-change', function() {
+  //       document.querySelector('#ratingsLabel').textContent = ratings.value;
+  //     });
+
+  //     var grade = document.querySelector('#grade');
+  //     grade.addEventListener('value-change', function() {
+  //       var label = (grade.value < grade.secondaryProgress) ? "Fail" : "Pass" ;
+  //       document.querySelector('#gradeLabel').textContent = grade.value + " (" + label + ")";
+  //     });
+  //   });
+
+	</script>
+
+</dom-module>
