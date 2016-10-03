@@ -29,7 +29,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <input type="text" value="{{myName}}" />
       </p>
       <p>
-        <span>My name is {{myName}} </span>
+        <span>My name is {{myName}}</span>
       </p>
 
     </div>
@@ -42,14 +42,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       propertise: {
         myName: {
           type: String,
-          value: 'ali'
+          value: 'Name'
         }
       },
 
       ready: function () {
         var myThis = this;
         this.$$('input').addEventListener("keyup", function() {
-          myThis.myName.myThis.$$('input').vaule;
+          console.log("test");
+          myThis.myName=myThis.$$('input').value;          
         });
       }
 
