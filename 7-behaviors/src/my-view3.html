@@ -26,7 +26,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <h1>View Three</h1>
       
       <p>
-        <input type="text" value="{{myName}}" />
+        <input type="text" value="{{myName::input}}" />
       </p>
       <p>
         <span>My name is {{myName}} </span>
@@ -46,12 +46,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         }
       },
 
-      ready: function () {
-        var myThis = this;
-        this.$$('input').addEventListener("keyup", function() {
-          console.log("test");
-          myThis.myName=myThis.$$('input').value;          
-        });
+      // ready: function () {
+      //   var myThis = this;
+      //   this.$$('input').addEventListener("keyup", function() {
+      //     console.log("test");
+      //     myThis.myName=myThis.$$('input').value;          
+      //   });
       
 
     });
