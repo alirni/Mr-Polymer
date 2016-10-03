@@ -1,0 +1,42 @@
+<link rel="import" href="../bower_components/polymer/polymer.html" />
+<link rel="import" href="shared-styles.html" />
+
+<dom-module>
+    
+	<template>
+		<style>
+
+    </style>
+  </template>
+    
+  <script>
+		HighlightBehavior = {
+
+			propertise: {
+				ishighlighted: {
+					type: Boolean,
+					value: false,
+					notify: true,
+					observer: '_highlightChanged'
+				}
+			},
+
+			listeners: {
+				click: '_toggleHighlight'
+			},
+
+			created: function () {
+				console.log('Hightlighting for ', this, 'enabled!');
+			},
+
+			_toggleHightlight: function() {
+				this.isHightlighted = !this.isHightlighted;
+			},
+
+			_hightlightChanged: function (value) {
+				this.toggleClass('hightlighted', value);
+			}
+			
+		};
+  </script>
+</dom-module>
