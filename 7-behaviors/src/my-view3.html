@@ -49,9 +49,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       ready: function () {
         var myThis = this;
         this.$$('input').addEventListener("keyup", function() {
-          myThis.myName.myThis.$$('input').vaule;
+          console.log("test");
+          myThis.myName=myThis.$$('input').value;          
         });
-      }
+      
 
     });
   </script>
