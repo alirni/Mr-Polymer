@@ -1,0 +1,43 @@
+<link rel="import" href="../bower_components/polymer/polymer.html" />
+<link rel="import" href="shared-styles.html" />
+
+<dom-module id="my-toolbar">
+
+  <template>
+
+    <style>
+      :host {
+        padding: 10px;
+        /* apply a mixin */
+        @apply(--my-toolbar-theme);
+      }
+
+      .title {
+        @apply(--my-toolbar-title-theme);
+      }
+
+      .title {
+        color: var(--my-toolbar-title-color);
+      }
+    </style>
+
+    <span class="title">{{title}}</span>
+
+    <button on-click="click">Hello</button>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-toolbar',
+      properties: {
+        title: String
+      },
+
+      click: function () {
+        this.fire('hello'); //crate event
+      }
+    });
+  </script>
+
+</dom-module>
