@@ -1,5 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html" />
 <link rel="import" href="my-toolbar.html" />
+<link rel="import" href="my-event.html" />
+
 
 <dom-module id="my-view6">
 
@@ -54,6 +56,8 @@
 
     <div id="drageme" on-track="handleTrack">{{message}}</div>
 
+    <my-event on-eevveenntt="salam"></my-event>
+
 
   </template>
     
@@ -80,6 +84,11 @@
 
       myHello: function () {
         alert('Hello!!');
+      },
+
+      salam: function () {
+        alert('ok');
+        alert('this is my event!!');
       },
 
       handleTrack: function (e) {
