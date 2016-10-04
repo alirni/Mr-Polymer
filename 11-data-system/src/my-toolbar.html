@@ -10,10 +10,16 @@
         padding: 10px;
         /* apply a mixin */
         @apply(--my-toolbar-theme);
+
+        --m1: {
+          color: red;
+          margin-left: 10px;
+        };
       }
 
       .title {
         @apply(--my-toolbar-title-theme);
+        @apply(--m1);
       }
 
       .title {
