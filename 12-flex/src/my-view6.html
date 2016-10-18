@@ -1,0 +1,112 @@
+<link rel="import" href="../bower_components/polymer/polymer.html" />
+<link rel="import" href="my-toolbar.html" />
+<link rel="import" href="my-event.html" />
+
+
+<dom-module id="my-view6">
+
+	<template>
+
+    <style>
+      /* Apply custom theme to toolbars */
+      :host {
+        --my-toolbar-theme: {
+          background-color: #32ab32;
+          border-radius: 4px;
+          border: 1px solid gray;
+					margin: 10px;
+        };
+        --my-toolbar-title-theme: {
+          color: black;
+        };
+      }
+
+      /* Make only toolbars with the .warning class red and bold */
+      .warning {
+        --my-toolbar-title-theme: {
+          color: red;
+          font-weight: bold;
+        };
+      }
+
+      #drageme {
+        width: 300px;
+        height: 300px;
+        background-color: gray;
+        margin: 20px;
+      }
+
+    </style>
+
+    <my-toolbar title="This one is green."></my-toolbar>
+    <my-toolbar title="This one is green too." on-hello="myHello"></my-toolbar> <!-- my-event > on-hello  -->
+
+    <my-toolbar class="warning" title="This one is red."></my-toolbar>
+
+    <p>
+      <div>I will respond</div>
+      <div>to a tap on</div>
+      <div>any of my childern!</div>
+      <div id="special">I am special!</div>
+    </p>
+
+    <p>
+      <button on-tap="myTap">tap me</button>
+    </p>
+
+    <div id="drageme" on-track="handleTrack">{{message}}</div>
+
+    <my-event on-eevveenntt="salam"></my-event>
+
+
+  </template>
+    
+  <script>
+		Polymer({
+			is: 'my-view6',
+
+      listeners: {
+        'tap': 'regularTap',
+        'special.tap': 'specialTap'
+      },
+
+      regularTap: function (e) {
+        //alert("Tank you for tapping");
+      },
+
+      specialTap: function (e) {
+        //alert("I was special tapping");
+      },
+
+      myTap: function () {
+        //alert('whoo!!');
+      },
+
+      myHello: function () {
+        alert('Hello!!');
+      },
+
+      salam: function () {
+        alert('ok');
+        alert('this is my event!!');
+      },
+
+      handleTrack: function (e) {
+        switch (e.detail.state) {
+          case 'start':
+            this.message = 'Tracking Started!';
+            break;
+          case 'track':
+            this.message = 'Tracking is progress... ' + e.detail.x + ', ' + e.detail.y;
+            break;
+          case 'end':
+            this.message = 'Tracking ended!';
+            break;
+        }        
+      }
+
+		});
+
+  </script>
+
+</dom-module>

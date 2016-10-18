@@ -1,0 +1,37 @@
+<link rel="import" href="../bower_components/polymer/polymer.html" />
+<link rel="import" href="shared-styles.html" />
+
+<dom-module id="my-event">
+
+  <template>
+
+    <style>
+      :host {
+        padding: 10px;
+      }
+
+      button {
+        width: 100px;
+        height: 50px;
+        background-color: #34215a;
+        margin: 10px;
+      }
+
+    </style>
+
+
+    <button on-click="me">TAP ME</button>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-event',
+
+      me: function () {
+        this.fire('eevveenntt');
+      }
+    });
+  </script>
+
+</dom-module>
