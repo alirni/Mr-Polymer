@@ -7,38 +7,43 @@
 		<style include="iron-flex iron-flex-alignment">
 			
 			:host {
-				display: block;
-				padding: 10px;
+				/*display: block;*/
+				/*padding: 1px;*/
 			}
 
       .card {
         margin: 5px 0;
         color: #757575;
-        border-radius: 5px;
+        /*border-radius: 5px;*/
         background-color: #fff;
         box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      .nowrap {
+        flex-direction: nowrap;
       }
 
 		</style>
 
-		<div class="vertical">
-      <div class="flex-item card">
+		<div class="layout horizontal wrap end">
+      <div class="card flex-auto">
         <h1>Hello1</h1>
       </div>
       
-      <div class="flex-item card">
+      <div class="card flex-auto">
         <h1>Hello2</h1>
       </div>
 
-      <div class="flex-item card">
-        <h1>Hello3 -_-</h1>
+      <div class="card flex-auto">
+        <h1>Hello3</h1>
       </div>
 
-      <div class="flex-item card">
+      <div class="card flex-auto">
         <h1>Hello4</h1>
       </div>
 
-      <div class="flex-item card">
+      <div class="card flex-auto">
         <h1>Hello5</h1>
       </div>
     </div>
