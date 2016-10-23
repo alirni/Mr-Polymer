@@ -40,7 +40,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <h1>View Three</h1>
 
       
-      <input type="text" value="{{myName}}" placeholder="Type Your Name" />
+      <input type="text" value="{{myName::input}}" placeholder="Type Your Name" />
 
       
 
@@ -57,7 +57,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       is: 'my-view3',
 
       properties: {
-        myName: String
+        myName: Object
       }
     });
   </script>
