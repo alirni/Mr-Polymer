@@ -25,7 +25,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <app-route
         route="{{route}}"
-        pattern="/:name"
+        pattern="/:myName"
         data="{{routeData}}"></app-route>
 
     <div class="card">
@@ -34,7 +34,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <p>Ea duis bonorum nec, falli paulo aliquid ei eum.</p>
       <p>Id nam odio natum malorum, tibique copiosae expetenda mel ea.Detracto suavitate repudiandae no eum. Id adhuc minim soluta nam.Id nam odio natum malorum, tibique copiosae expetenda mel ea.</p>
 
-      <p> Hello {{}} </p>
+      <p> Hello {{route}} </p>
     </div>
   </template>
 
@@ -43,7 +43,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       is: 'my-view2',
 
       properties: {
-        route: Object
+        route: {
+          type: Object
+        },
       },
 
     });
