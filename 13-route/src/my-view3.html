@@ -27,11 +27,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <h1>View Three</h1>
 
       
-      <input type="text" value="{{myName}}" placeholder="Type Your Name" />
+      <input type="text" value="{{name}}" placeholder="Type Your Name" />
 
       
 
-      <a href="/view2/name">send</a>
+      <a href="/view2/myName">send</a>
 
       <!--<paper-button raised>Send</paper-button>-->
       
@@ -43,7 +43,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     Polymer({
       is: 'my-view3',
 
+      properties: {
 
+      }
     });
   </script>
 </dom-module>
