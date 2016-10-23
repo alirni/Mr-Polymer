@@ -20,6 +20,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         padding: 10px;
       }
+
+      a {
+        text-decoration: none;
+      }
+
+      paper-button {
+        background: green;
+        color: #fafafa;
+      }
+
+      paper-button:hover {
+        background: lime;
+      }
     </style>
 
     <div class="card">
@@ -31,7 +44,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       
 
-      <a href="/view2">
+      <a href="/view2/{{myName}}">
         <paper-button raised>Send</paper-button>
       </a>
       
