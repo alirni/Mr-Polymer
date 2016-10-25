@@ -42,12 +42,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       
       <input type="text" value="{{myName::input}}" placeholder="Type Your Name" />
 
-      
-
-      <a href="/view2/{{myName}}">
-        <paper-button raised>Send</paper-button>
-      </a>
-      
+      <paper-button on-tap="tap" raised>Send</paper-button>
       
     </div>
   </template>
@@ -57,7 +52,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       is: 'my-view3',
 
       properties: {
-        myName: Object
+        myName: String
+      },
+
+      tap: function() {
+        console.log(this.myName);
+
+        this.fire('username', this.myName);
       }
     });
   </script>
